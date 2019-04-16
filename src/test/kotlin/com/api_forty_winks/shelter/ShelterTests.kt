@@ -1,5 +1,6 @@
 package com.api_forty_winks.shelter
 
+
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
