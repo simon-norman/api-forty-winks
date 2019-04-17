@@ -1,8 +1,5 @@
 package com.api_forty_winks.shelter
 
-import junit.framework.TestCase
-import org.assertj.core.api.Assertions.assertThat
-import org.hamcrest.Matchers.hasSize
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith

@@ -1,6 +1,5 @@
 package com.api_forty_winks.shelter
 
-import com.api_forty_winks.shelter.Shelter
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -8,7 +7,9 @@ import org.springframework.web.bind.annotation.RestController
 class ShelterController {
 
     @RequestMapping("/shelters")
-    fun getShelters() : Shelter {
-     return   Shelter()
+    fun getShelters() : ShelterList {
+        val list = ShelterList()
+        list.getShelters()
+     return   list
     }
 }

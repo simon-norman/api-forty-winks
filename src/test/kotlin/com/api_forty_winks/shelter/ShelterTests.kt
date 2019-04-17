@@ -12,7 +12,9 @@ import org.springframework.test.context.junit4.SpringRunner
 class ShelterTests {
     @Test
     fun `It returns a name when called`(){
-        val shelter = Shelter()
+        val shelterParams = mutableMapOf<String,String>()
+        shelterParams.put("name","Makers")
+        val shelter = Shelter(shelterParams)
         assertEquals("Makers", shelter.name)
     }
 }
