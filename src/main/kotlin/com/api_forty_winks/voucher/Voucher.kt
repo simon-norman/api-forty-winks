@@ -1,10 +1,9 @@
 package com.api_forty_winks.voucher
 
-
 import javax.persistence.*
 
 @Entity
-@Table(name = "vouchers")
+@Table(name = "voucher")
 class Voucher(amount: Float) {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(columnDefinition = "serial") var id: Long? = null
