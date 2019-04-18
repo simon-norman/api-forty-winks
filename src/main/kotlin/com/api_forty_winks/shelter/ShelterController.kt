@@ -11,7 +11,7 @@ class ShelterController {
     @CrossOrigin
     fun getShelters() : ShelterList {
         val list = ShelterList()
-        list.getShelters()
-     return   list
+        list.loadShelters()
+        return list
     }
 }
