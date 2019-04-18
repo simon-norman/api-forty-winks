@@ -12,14 +12,14 @@ class ShelterListTests {
     @Test
     fun `It returns a list`(){
         val list = ShelterList()
-        list.getShelters()
+        list.loadShelters()
         Assert.assertEquals(2, list.shelters.size)
     }
 
     @Test
     fun `It returns a list of Shelters`(){
         val list = ShelterList()
-        list.getShelters()
+        list.loadShelters()
         Assert.assertEquals("Makers", list.shelters[0].name)
     }
 }

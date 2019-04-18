@@ -3,7 +3,7 @@ package com.api_forty_winks.shelter
 class ShelterList {
     var shelters: MutableList<Shelter> = ArrayList()
 
-    fun getShelters() {
+    fun loadShelters() {
         println("START OF GET SHELTERS")
         var sheltersRaw: MutableList<MutableMap<String,String>> = ArrayList()
         val shelterData1 = mutableMapOf<String,String>()

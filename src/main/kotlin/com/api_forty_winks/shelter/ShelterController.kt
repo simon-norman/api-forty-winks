@@ -13,7 +13,7 @@ class ShelterController {
         println("SHELTER CONTROLLER ABOUT TO INSTANTIATE SHELTERLIST")
         val list = ShelterList()
         println("SHELTER LIST INSIDE SHELTER CONTROLLER ${list}")
-        list.getShelters()
+        list.loadShelters()
         println("SHELTER  LIST INSIDE SHELTER CONTROLLER AFTER GET SHELTERS CALLED ${list}")
      return   list
     }
