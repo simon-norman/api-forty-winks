@@ -10,8 +10,11 @@ class ShelterController {
     @RequestMapping("/shelters")
     @CrossOrigin
     fun getShelters() : ShelterList {
+        println("SHELTER CONTROLLER ABOUT TO INSTANTIATE SHELTERLIST")
         val list = ShelterList()
+        println("SHELTER LIST INSIDE SHELTER CONTROLLER ${list}")
         list.getShelters()
+        println("SHELTER LIST INSIDE SHELTER CONTROLLER AFTER GET SHELTERS CALLED ${list}")
      return   list
     }
 }
