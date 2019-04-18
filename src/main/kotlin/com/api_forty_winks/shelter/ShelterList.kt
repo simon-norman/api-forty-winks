@@ -19,6 +19,6 @@ class ShelterList {
         sheltersRaw.add(shelterData1)
         sheltersRaw.add(shelterData2)
         sheltersRaw.forEach { shelters.add(Shelter(it)) }
-        println("SHOW SHELTERS AT END OF GET SHELTERS: ${shelters}")
+        println("SHOW FIRST SHELTER IN LIST AT END OF GET SHELTERS: ${shelters[0]}")
     }
 }
