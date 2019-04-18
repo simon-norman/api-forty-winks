@@ -4,7 +4,6 @@ class ShelterList {
     var shelters: MutableList<Shelter> = ArrayList()
 
     fun loadShelters() {
-        println("START OF GET SHELTERS")
         var sheltersRaw: MutableList<MutableMap<String,String>> = ArrayList()
         val shelterData1 = mutableMapOf<String,String>()
         shelterData1["name"] = "Makers"
@@ -19,6 +18,5 @@ class ShelterList {
         sheltersRaw.add(shelterData1)
         sheltersRaw.add(shelterData2)
         sheltersRaw.forEach { shelters.add(Shelter(it)) }
-        println("SHOW FIRST SHELTER IN LIST AT END OF GET SHELTERS: ${shelters[0]}")
     }
 }
