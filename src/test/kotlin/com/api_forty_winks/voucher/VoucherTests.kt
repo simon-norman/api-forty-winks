@@ -11,8 +11,8 @@ import org.springframework.test.context.junit4.SpringRunner
 @SpringBootTest
 class VoucherTests {
     @Test
-    fun `It creates a new voucher`(){
-        var voucher = Voucher()
+    fun `It creates a new voucher for a given amount`(){
+        var voucher = Voucher(20.00)
         assertEquals("1", voucher.code)
     }
 
