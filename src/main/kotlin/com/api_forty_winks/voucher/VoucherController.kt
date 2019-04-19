@@ -16,9 +16,9 @@ class VoucherController(val voucherRepository: VoucherRepository) {
 
     @GetMapping("/voucher")
     @CrossOrigin
-    fun getVoucher(@RequestBody voucher: Voucher) : Voucher {
-        println(voucher.code)
-        var v = voucherRepository.getOne(voucher.code)
+    fun getVoucher(@RequestParam("code") code : Long) : Voucher {
+        println(code)
+        var v = voucherRepository.getOne(code)
         return v
     }
 }
