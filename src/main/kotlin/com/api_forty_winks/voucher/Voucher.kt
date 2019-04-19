@@ -4,7 +4,10 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "voucher")
+@Embeddable
 class Voucher(
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(columnDefinition = "serial") var code: Long? = null,
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(columnDefinition = "serial") var code: Long,
     var amount: Float? = null
-)
+) {
+    fun Voucher() {}
+}
