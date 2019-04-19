@@ -5,7 +5,6 @@ import javax.persistence.*
 @Entity
 @Table(name = "voucher")
 class Voucher(
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(columnDefinition = "serial") var id: Long? = null,
-    var code: String? = null,
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(columnDefinition = "serial") var code: Long? = null,
     var amount: Float? = null
 )

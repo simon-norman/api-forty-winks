@@ -11,14 +11,14 @@ import org.springframework.test.context.junit4.SpringRunner
 @SpringBootTest
 
 class VoucherControllerApiTests {
-    @Test
-    fun `It returns a json with a name`(){
-        given().
-            standaloneSetup(VoucherController()).
-        `when`().
-            post("/voucher").
-            then().
-            statusCode(200)
-    }
+//    @Test
+//    fun `It returns a json with a name`(){
+//        given().
+//            standaloneSetup(VoucherController()).
+//        `when`().
+//            post("/voucher").
+//            then().
+//            statusCode(200)
+//    }
 
 }
