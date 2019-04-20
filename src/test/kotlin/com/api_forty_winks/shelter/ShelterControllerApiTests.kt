@@ -19,7 +19,7 @@ class ShelterControllerApiTests {
             get("/shelters").
             then().
             statusCode(200).
-            body("shelters[0].name", equalTo("Makers"))
+            body("shelters[0].name", equalTo("Providence Row HA - Middle Street Project"))
     }
 
 }
