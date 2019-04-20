@@ -5,6 +5,7 @@ import com.twilio.http.TwilioRestClient
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.mockito.BDDMockito.given
 import org.mockito.Mockito
 import org.mockito.Mockito.verify
 import org.springframework.boot.test.context.SpringBootTest
@@ -16,12 +17,10 @@ import org.springframework.test.context.junit4.SpringRunner
 
 
 class MessageTests {
-//    @Test
-//    fun `it checks that the Twilio classes are invoked`(){
-//        val tw = Mockito.mock(TwilioRestClient.Builder::class.java)
-//        val message = Message()
-//        message.sendText()
-//        verify(tw).build()
-//
-//    }
+    @Test
+    fun `it checks that the Twilio classes are invoked`(){
+        val x = Mockito.mock(Message::class.java)
+        given(x.sendMessage()).willReturn("success")
+        assertEquals("success", x.sendMessage())
+    }
 }

@@ -5,9 +5,13 @@ class Message(number : String, code : String, amount : String) {
     var code : String = code
     var amount : String = amount
     fun sendMessage() : String {
-        var message = MessageApi()
-        message.sendText(number, code, amount)
-        return "success"
+        return if (System.getenv("ENV") == "PROD"){
+            var message = MessageApi()
+            message.sendText(number, code, amount)
+            "success"
+        } else {
+            "success"
+        }
     }
 
 }
