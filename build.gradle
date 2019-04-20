@@ -16,6 +16,7 @@ repositories {
 }
 
 dependencies {
+    compile group: "com.twilio.sdk", name: "twilio", version: "7.37.2"
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.flywaydb:flyway-core')
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -25,6 +26,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testCompile 'io.rest-assured:spring-mock-mvc:3.3.0'
     runtime('org.postgresql:postgresql')
+    testCompile 'org.mockito:mockito-core:2.8.9'
 }
 
 compileKotlin {
