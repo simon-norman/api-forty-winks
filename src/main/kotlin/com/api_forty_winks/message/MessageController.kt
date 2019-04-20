@@ -1,13 +1,13 @@
 package com.api_forty_winks.message
 
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 class MessageController {
-    @RequestMapping("/sendMessage")
-    fun sendMessage() : String {
-        val message = Message()
-        return message.sendText()
+    @PostMapping("/message")
+    @CrossOrigin
+    fun sendMessage(@RequestBody message : Message) : Message {
+        message.sendMessage()
+        return message
     }
 }

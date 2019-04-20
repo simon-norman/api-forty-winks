@@ -1,7 +1,6 @@
 package com.api_forty_winks.voucher
 
 import org.springframework.web.bind.annotation.*
-import java.util.*
 
 @RestController
 class VoucherController(val voucherRepository: VoucherRepository) {
