@@ -25,10 +25,11 @@ open class WebSecurity : WebSecurityConfigurerAdapter() {
 
     @Throws(Exception::class)
     override fun configure(http: HttpSecurity) {
+        http.authorizeRequests()
+            .antMatchers("/private/**").authenticated()
+
         JwtWebSecurityConfigurer
             .forRS256(audience, issuer!!)
             .configure(http)
-            .authorizeRequests()
-            .antMatchers(HttpMethod.GET, "/private/**").authenticated()
 }
 }
