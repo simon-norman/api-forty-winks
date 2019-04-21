@@ -23,6 +23,7 @@ dependencies {
     implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
     implementation 'org.jetbrains.kotlin:kotlin-reflect'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    implementation 'com.auth0:auth0-spring-security-api:1.0.0-rc.2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testCompile 'io.rest-assured:spring-mock-mvc:3.3.0'
     runtime('org.postgresql:postgresql')
