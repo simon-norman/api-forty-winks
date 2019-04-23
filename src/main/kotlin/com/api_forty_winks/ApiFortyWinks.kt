@@ -1,4 +1,4 @@
-package com.api_forty_winks.shelter
+package com.api_forty_winks
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -9,3 +9,7 @@ class ApiFortyWinks
 fun main(args: Array<String>){
     runApplication<ApiFortyWinks>(*args)
 }
+
+
+
+

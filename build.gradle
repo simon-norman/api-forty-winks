@@ -2,6 +2,8 @@ plugins {
     id 'org.springframework.boot' version '2.1.4.RELEASE'
     id 'org.jetbrains.kotlin.jvm' version '1.2.71'
     id 'org.jetbrains.kotlin.plugin.spring' version '1.2.71'
+    id 'org.jetbrains.kotlin.plugin.jpa' version '1.2.71'
+    id "org.flywaydb.flyway" version "5.2.4"
 }
 apply plugin: 'io.spring.dependency-management'
 
@@ -14,12 +16,18 @@ repositories {
 }
 
 dependencies {
+    compile group: "com.twilio.sdk", name: "twilio", version: "7.37.2"
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.flywaydb:flyway-core')
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
     implementation 'org.jetbrains.kotlin:kotlin-reflect'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    implementation 'com.auth0:auth0-spring-security-api:1.0.0-rc.2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testCompile 'io.rest-assured:spring-mock-mvc:3.3.0'
+    runtime('org.postgresql:postgresql')
+    testCompile 'org.mockito:mockito-core:2.8.9'
 }
 
 compileKotlin {
@@ -35,3 +43,14 @@ compileTestKotlin {
         jvmTarget = '1.8'
     }
 }
+
+flyway {
+    url = 'jdbc:postgresql://localhost:5432/forty_winks_dev'
+    user = 'student'
+    password = ''
+    outOfOrder = true
+}
+
+
+
+

@@ -5,4 +5,5 @@ class Shelter(data: MutableMap<String,String>) {
    val price = data["price"]
    val description = data["description"]
    val location = data["location"]
+   val mapurl = data["mapurl"]
 }
