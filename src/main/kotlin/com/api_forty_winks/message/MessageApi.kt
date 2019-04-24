@@ -14,7 +14,7 @@ class MessageApi {
         val textMessage = MessageCreator(
             PhoneNumber(number),
             PhoneNumber(TWILIO_PHONE_NUMBER),
-            "Hello, a kind stranger has donated a Forty Winks Voucher - Code: "
+            "Hello, a kind stranger has donated a Forty Winks Voucher - Code: FW"
                     + code +
                     " Amount: £" + amount).create(client)
 
