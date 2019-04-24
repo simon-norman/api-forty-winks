@@ -2,9 +2,7 @@ package com.api_forty_winks.voucher
 
 import com.api_forty_winks.payment.Redemption
 import com.api_forty_winks.payment.PaypalApi
-import com.fasterxml.jackson.databind.util.JSONPObject
 import org.springframework.web.bind.annotation.*
-import org.springframework.http.ResponseEntity
 
 @RestController
 class VoucherController(val voucherRepository: VoucherRepository) {
@@ -16,7 +14,7 @@ class VoucherController(val voucherRepository: VoucherRepository) {
         return voucher
     }
 
-    @PostMapping("/voucher/redeem")
+    @PostMapping("/private/voucher/redeem")
     @CrossOrigin
     fun redeemVoucher(@RequestBody redemption : Redemption) : Voucher {
         val paypalApi = PaypalApi()
