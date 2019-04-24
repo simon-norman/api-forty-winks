@@ -7,7 +7,9 @@ import javax.persistence.*
 @Embeddable
 class Voucher(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(columnDefinition = "serial") var code: Long,
-    var amount: Float? = null
+    var amount: Float
 ) {
-    fun Voucher() {}
+    fun reduceAmount(byAmount: Float) {
+        this.amount = this.amount - byAmount
+    }
 }
