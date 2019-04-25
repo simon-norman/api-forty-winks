@@ -17,7 +17,6 @@ import org.springframework.web.client.RestTemplate
 @RunWith(SpringRunner::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 
-
 //class newVoucherObject : Serializable {
 //    var code : Long? = null
 //}

@@ -11,6 +11,7 @@ import org.springframework.test.context.web.WebAppConfiguration
 @RunWith(SpringRunner::class)
 @SpringBootTest
 @WebAppConfiguration
+
 class ShelterControllerApiTests {
     @Test
     fun `It returns a json with a name`(){
