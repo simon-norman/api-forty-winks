@@ -28,6 +28,8 @@ class VoucherControllerApiTests {
     @Test
     fun `It returns updated voucher after a payment call`(){
 
+        val AUTH_CLIENT_ID : String = System.getenv("AUTH_CLIENT_ID")
+        val AUTH_CLIENT_SECRET : String = System.getenv("AUTH_CLIENT_SECRET")
         val restTemplate = RestTemplate()
         val auth0Url = "https://dev-itjmkjwl.eu.auth0.com/oauth/token"
         var data = "{\"amount\":\"10.00\"}"
@@ -43,7 +45,7 @@ class VoucherControllerApiTests {
 
         headers.set("content-type", "application/json")
         headers.set("Accept-Language", "en_US")
-        data = "{\"client_id\":\"c0Egr72COe3vxq0NSIwYmW9ayzTSNFiE\",\"client_secret\":\"CO9icNuaAmQZF0w8ONxJSJ3taM44SWAYSpjNGrrM9-nvMmpNjTXPUCa0f25QkLjh\",\"audience\":\"https://api-forty-winks.herokuapp.com/\",\"grant_type\":\"client_credentials\"}"
+        data = "{\"client_id\":\"$AUTH_CLIENT_ID\",\"client_secret\":\"$AUTH_CLIENT_SECRET\",\"audience\":\"https://api-forty-winks.herokuapp.com/\",\"grant_type\":\"client_credentials\"}"
         val entity = HttpEntity(data, headers)
         val authAccessToken = restTemplate.postForObject(auth0Url, entity, AccessToken::class.java)
 

@@ -8,6 +8,8 @@ import org.springframework.web.client.RestTemplate
 
 
 class PaypalApi {
+    val PAYPAL_USER_NAME : String = System.getenv("PAYPAL_USER_NAME")
+    val PAYPAL_PASSWORD : String = System.getenv("PAYPAL_PASSWORD")
     fun createPayment(redemption: Redemption) : ResponseEntity<String> {
         val restTemplate = RestTemplate()
         val paypalTokenUrl = "https://api.sandbox.paypal.com/v1/oauth2/token"
@@ -15,8 +17,8 @@ class PaypalApi {
 
         headers.set("Accept", "application/json")
         headers.set("Accept-Language", "en_US")
-        headers.setBasicAuth("ASYuw4VE7eyILUM6c47nrJj2kHrMfWYRhu0fCKNfeFtetB6T8JSj_WLAS95GjkUHsG2xhfPJKaQtXZiU",
-            "EOBMt7N9x-kZzCaEQfSvU-q_Wbwxuh6_xxn_3XZjIgdOOiM2Mzc_GR1B2oRF5G2b2y1BL1OIxbbKfW4m")
+        headers.setBasicAuth(PAYPAL_USER_NAME,
+            PAYPAL_PASSWORD)
         var entity = HttpEntity("grant_type=client_credentials", headers)
         val accessToken = restTemplate.postForObject(paypalTokenUrl, entity, AccessToken::class.java)
 
