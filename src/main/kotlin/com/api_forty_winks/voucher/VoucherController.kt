@@ -1,7 +1,8 @@
 package com.api_forty_winks.voucher
 
+import com.api_forty_winks.payment.Redemption
+import com.api_forty_winks.payment.PaypalApi
 import org.springframework.web.bind.annotation.*
-import org.springframework.http.ResponseEntity
 
 @RestController
 class VoucherController(val voucherRepository: VoucherRepository) {
@@ -13,10 +14,17 @@ class VoucherController(val voucherRepository: VoucherRepository) {
         return voucher
     }
 
-    @PostMapping("private/vouchers/1/redemption")
+    @PostMapping("/private/voucher/redeem")
     @CrossOrigin
-    fun redeemVoucher() : ResponseEntity<Unit> {
-        return ResponseEntity.ok().build()
+    fun redeemVoucher(@RequestBody redemption : Redemption) : Voucher {
+        val paypalApi = PaypalApi()
+        paypalApi.createPayment(redemption)
+
+        val voucher = voucherRepository.getOne(redemption.code.toLong())
+        voucher.reduceAmount(redemption.amount.toFloat())
+        voucherRepository.save(voucher)
+
+        return voucher
     }
 
     @GetMapping("/voucher")
@@ -25,4 +33,6 @@ class VoucherController(val voucherRepository: VoucherRepository) {
         var v = voucherRepository.getOne(code)
         return v
     }
+
+
 }

@@ -1,19 +1,16 @@
 package com.api_forty_winks.message
 
+import io.restassured.RestAssured.given
 import io.restassured.http.ContentType
-import io.restassured.module.mockmvc.RestAssuredMockMvc.*
 import net.minidev.json.JSONObject
 import org.hamcrest.CoreMatchers.equalTo
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.Mockito
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.junit4.SpringRunner
 
 @RunWith(SpringRunner::class)
-@SpringBootTest
-@AutoConfigureMockMvc
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 
 class MessageControllerApiTests {
     @Test
@@ -23,9 +20,8 @@ class MessageControllerApiTests {
         requestParams["code"] = "FW5"
         requestParams["amount"] = "26.00"
         given().
-            contentType(ContentType.JSON).
             body(requestParams).
-            standaloneSetup(MessageController()).
+            contentType(ContentType.JSON).
         `when`().
             post("/message").
         then().
